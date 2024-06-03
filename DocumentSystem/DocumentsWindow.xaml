@@ -1,0 +1,31 @@
+﻿<Window x:Class="DocumentSystem.DocumentsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Документы" Height="350" Width="500">
+    <Grid>
+        <DataGrid Name="DocumentsDataGrid" AutoGenerateColumns="False"
+                  CanUserAddRows="False" IsReadOnly="True" Margin="0,0,0,80" 
+                   MouseDoubleClick="DocumentsDataGrid_MouseDoubleClick"
+                  MouseRightButtonDown="DocumentsDataGrid_MouseRightButtonDown">
+            
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID"
+                                    Binding="{Binding DocumentId}" Width="Auto"/>
+                
+                <DataGridTextColumn Header="Название документа"
+                                    Binding="{Binding DocumentName}" Width="*"/>
+            </DataGrid.Columns>
+            
+
+        </DataGrid>
+        <Button x:Name="CreateDocumentButton" IsEnabled="True" Content="Создать документ" 
+                HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,10,10"
+                Width="150" Click="CreateDocumentButton_Click"/>
+        
+        <Button Content="Список пользователей" HorizontalAlignment="Center" VerticalAlignment="Bottom" 
+                Margin="0,0,0,10" Width="150" Click="UserListButton_Click"/>
+       
+        <Button Content="Назад" HorizontalAlignment="Left" VerticalAlignment="Bottom"
+                Margin="10,0,0,10" Width="150" Click="BackButton_Click"/>
+    </Grid>
+</Window>
